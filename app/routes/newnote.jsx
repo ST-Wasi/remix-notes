@@ -25,13 +25,12 @@ export async function loader() {
 
 export async function action({ request }) {
     const formData = await request.formData()
-    console.log('✌️formData --->', formData);
     const noteData = Object.fromEntries(formData)
     const existingNotes = await getStoredNotes()
     noteData.id = new Date().getTime();
     const updatedNotes = existingNotes.concat(noteData)
     await storeNotes(updatedNotes)
-    return redirect("/notes")
+    return redirect("/newnote")
 }
 
 export function links() {

@@ -1,4 +1,4 @@
-import styles from './NoteList.css';
+import styles from './NoteList.css?url';
 
 function NoteList({ notes }) {
   return (
